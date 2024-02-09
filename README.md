@@ -16,6 +16,11 @@ docker-compose up --build -d --remove-orphans
 docker-compose run web scripts/migrate.sh
 ```
 
+If everything went fine, go to ```localhost:9051``` and you should see:
+
+![image](https://github.com/yverdon/qele/assets/3356536/3276444f-55e8-4f03-b5c9-1665de45c36b)
+
+
 ## Setting up production instance
 
 ### Database
