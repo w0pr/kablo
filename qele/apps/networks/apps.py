@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class NetworksConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'networks'
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "qele.apps.networks"

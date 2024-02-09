@@ -15,7 +15,6 @@ services:
       ENV: PROD
       DISABLE_MIGRATION_SCRIPT_ON_PRODUCTION:
       CLEAR_PUBLIC_SCHEMA_ON_FIXTURIZE:
-      DJANGO_DOCKER_PORT:
       STATIC_URL:
       PREFIX_URL:
       PGDATABASE:
@@ -44,6 +43,7 @@ services:
       AXES_COOLOFF_TIME:
       AXES_IPWARE_PROXY_COUNT:
       DEFAULT_SITE:
+      LOCAL_TIME_ZONE_UTC:
     ports:
       - "${DJANGO_DOCKER_PORT}:9000"
     networks:

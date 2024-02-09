@@ -12,7 +12,10 @@ RUN apt-get -y update \
   python3-setuptools \
   python3-wheel \
   python3-cffi \
-  shared-mime-info
+  shared-mime-info \
+  tzdata \
+  && ln -fs /usr/share/zoneinfo/Europe/Zurich /etc/localtime \
+  && dpkg-reconfigure -f noninteractive tzdata
 # Copy files in another location to solved windows rights issues
 # These files are only used during build process and by entrypoint.sh for dev
 
