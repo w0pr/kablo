@@ -19,6 +19,8 @@ docker-compose up --build -d --remove-orphans
 docker-compose run web scripts/migrate.sh
 ```
 
+As fixtures are not yet available, should you need and superadmin account, please create it as follow: ```python manage.py createsuperuser```
+
 If everything went fine, go to ```localhost:9051``` and you should see:
 
 ![image](https://github.com/yverdon/qele/assets/3356536/3276444f-55e8-4f03-b5c9-1665de45c36b)
