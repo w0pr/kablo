@@ -1,0 +1,50 @@
+volumes:
+  static_root:
+
+services:
+  qele: # Name of this container should not be changed
+    image: qgele
+    restart: unless-stopped
+    build:
+      context: ./
+      args:
+        ENV: PROD
+    entrypoint: /code/entrypoint.sh
+    command: "gunicorn qele.core.wsgi -b :9000 --error-logfile gunicorn_log.log --workers=2 --threads=4 --worker-class=gthread"
+    environment:
+      ENV: PROD
+      DISABLE_MIGRATION_SCRIPT_ON_PRODUCTION:
+      CLEAR_PUBLIC_SCHEMA_ON_FIXTURIZE:
+      DJANGO_DOCKER_PORT:
+      STATIC_URL:
+      PREFIX_URL:
+      PGDATABASE:
+      PGUSER:
+      PGPASSWORD:
+      PGHOST:
+      PGPORT:
+      SECRET_KEY:
+      EMAIL_HOST:
+      EMAIL_PORT:
+      EMAIL_HOST_USER:
+      EMAIL_HOST_PASSWORD:
+      EMAIL_USE_TLS:
+      EMAIL_TO_CONSOLE:
+      DEFAULT_FROM_EMAIL:
+      PAGINATE_BY:
+      ALLOWED_HOSTS:
+      ALLOWED_CORS:
+      ENABLE_2FA:
+      SESSION_COOKIE_AGE:
+      SESSION_SAVE_EVERY_REQUEST:
+      SESSION_COOKIE_SAMESITE:
+      SECURE_PROXY_SSL_HEADER:
+      AXES_FAILURE_LIMIT:
+      AXES_LOCKOUT_PARAMETERS:
+      AXES_COOLOFF_TIME:
+      AXES_IPWARE_PROXY_COUNT:
+      DEFAULT_SITE:
+    ports:
+      - "${DJANGO_DOCKER_PORT}:9000"
+    networks:
+      - default

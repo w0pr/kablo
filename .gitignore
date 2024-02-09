@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.vscode/
+/venv
+gunicorn_log.log
+env.yaml
+/docker-compose.override.yml
+*.env
+*.bak
+.coverage
+env.backup
+/media/
