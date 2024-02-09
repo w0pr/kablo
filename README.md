@@ -1,5 +1,8 @@
-# qele
+# Qele: Open Source for Electric Newtork Information System
+
 POC: Open Source for Electric Newtork Information System
+
+⚠️ THIS IS ***NOT*** READY FOR PRODUCTION ⚠️
 
 ## Setting up full Docker non persistent demo
 
