@@ -4,21 +4,15 @@ Django>5
 # https://github.com/yverdon/docker-qele/
 gdal==3.8.3
 gunicorn
-html5lib
 psycopg2-binary
-PyYAML
 requests
 whitenoise
 django-simple-history
 djangorestframework
 djangorestframework-gis
 django-cors-headers
-django-constance
 django-two-factor-auth[phonenumbers]
 django-oauth-toolkit
 django-allauth
-pyyaml
-uritemplate
 django-axes[ipware]
 django-rest-knox
-django-polymorphic
