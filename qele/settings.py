@@ -118,8 +118,6 @@ INSTALLED_APPS = [
     "qele.apps.accounts",
     "qele.apps.api",
     "qele.apps.networks",
-    "qele.apps.profiles",
-    "qele.apps.schematics",
     # django
     "django.contrib.admin",
     "django.contrib.auth",
