@@ -3,4 +3,4 @@ from django.apps import AppConfig
 
 class NetworksConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
-    name = "qele.apps.networks"
+    name = "kablo.apps.networks"

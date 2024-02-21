@@ -1,5 +1,5 @@
 """
-URL configuration for qele project.
+URL configuration for kablo project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -18,7 +18,7 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import include, path
 
-from qele.apps.core import views as core_views
+from kablo.apps.core import views as core_views
 
 urlpatterns = [
     path("", core_views.home, name="home"),

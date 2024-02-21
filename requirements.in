@@ -1,7 +1,7 @@
 beautifulsoup4
 Django>5
 # Base docker image must be update when GDAL is updated
-# https://github.com/yverdon/docker-qele/
+# https://github.com/yverdon/docker-kablo/
 gdal==3.8.3
 gunicorn
 psycopg2-binary

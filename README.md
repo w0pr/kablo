@@ -1,4 +1,4 @@
-# Qele: Open Source for Electric Newtork Information System
+# kablo: Open Source for Electric Newtork Information System
 
 POC: Open Source for Electric Newtork Information System
 
@@ -10,7 +10,7 @@ This will bring up a demo instance served by the
 Django development server in reload mode.
 
 ```bash
-git clone git@github.com:yverdon/qele.git && cd qele
+git clone git@github.com:yverdon/kablo.git && cd kablo
 # copy default config
 cp -n .env.example .env
 # start the stack
@@ -23,7 +23,7 @@ As fixtures are not yet available, should you need and superadmin account, pleas
 
 If everything went fine, go to ```localhost:9051``` and you should see:
 
-![image](https://github.com/yverdon/qele/assets/3356536/3276444f-55e8-4f03-b5c9-1665de45c36b)
+![image](https://github.com/yverdon/kablo/assets/3356536/3276444f-55e8-4f03-b5c9-1665de45c36b)
 
 
 ## Setting up production instance
@@ -72,13 +72,13 @@ docker-compose up --build -d --remove-orphans
 Run tests in a the running container
 
 ```bash
-docker-compose exec web python manage.py test --settings=qele.settings_test
+docker-compose exec web python manage.py test --settings=kablo.settings_test
 ```
 
 Run a specific test in the running container (adding the `--keepdb` flag speeds up iterations)
 
 ```bash
-docker-compose exec web python manage.py test --settings=qele.settings_test --keepdb qele.apps.permits.tests.test_a_qele_case
+docker-compose exec web python manage.py test --settings=kablo.settings_test --keepdb kablo.apps.permits.tests.test_a_kablo_case
 ```
 
 ### Linting
@@ -155,7 +155,7 @@ Once you provided your token go to `/admin/` to access the admin app.
 Django-axes is used to limit login attempts from users.
 Please read https://django-axes.readthedocs.io/en/latest/index.html to learn how to use it.
 
-### Qele as a OAuth2 provider [NOT IMPLEMENTED]
+### kablo as a OAuth2 provider [NOT IMPLEMENTED]
 * [Access to a ressources with QGIS](docs/OAuth2_Qgis.md)
 * [Access to a ressources with a bearer token](docs/OAuth2_access_api.md)
 

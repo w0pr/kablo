@@ -4,5 +4,5 @@ omit =
   .venv/*
   venv/*
   manage.py
-  qele/settings*
-  qele/wsgi.py
+  kablo/settings*
+  kablo/wsgi.py
