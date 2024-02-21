@@ -106,10 +106,10 @@ To install a new package, add it to `requirements.in`, without pinning it to a
 specific version unless needed. Then run:
 
 ```
-docker-compose exec web pip-compile requirements.in
-docker-compose exec web pip-compile requirements_dev.in
-docker-compose exec web pip install -r requirements.txt
-docker-compose exec web pip install -r requirements_dev.txt
+docker-compose exec kablo pip-compile requirements.in
+docker-compose exec kablo pip-compile requirements_dev.in
+docker-compose exec kablo pip install -r requirements.txt
+docker-compose exec kablo pip install -r requirements_dev.txt
 ```
 
 Make sure you commit both the `requirements.in` and the `requirements.txt` files.
@@ -120,8 +120,8 @@ And the `requirements_dev.in` and the `requirements_dev.txt` files.
 To upgrade all the packages to their latest available version, run:
 
 ```
-docker-compose exec web pip-compile -U requirements.in
-docker-compose exec web pip install -r requirements.txt
+docker-compose exec kablo pip-compile -U requirements.in
+docker-compose exec kablo pip install -r requirements.txt
 ```
 
 To upgrade only a specific package, use `pip-compile -P <packagename>`.
@@ -149,11 +149,6 @@ Follow the following steps:
 
 Next time you sign in, you will be asked for a token.
 Once you provided your token go to `/admin/` to access the admin app.
-
-### Locked failed logins
-
-Django-axes is used to limit login attempts from users.
-Please read https://django-axes.readthedocs.io/en/latest/index.html to learn how to use it.
 
 ### kablo as a OAuth2 provider [NOT IMPLEMENTED]
 * [Access to a ressources with QGIS](docs/OAuth2_Qgis.md)

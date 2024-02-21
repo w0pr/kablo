@@ -14,5 +14,4 @@ django-cors-headers
 django-two-factor-auth[phonenumbers]
 django-oauth-toolkit
 django-allauth
-django-axes[ipware]
 django-rest-knox

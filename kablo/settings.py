@@ -54,23 +54,6 @@ CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_AGE = int(os.getenv("SESSION_COOKIE_AGE", 60 * 60))
 SESSION_SAVE_EVERY_REQUEST = os.getenv("SESSION_SAVE_EVERY_REQUEST", True)
 
-# LIMIT MAX CONNEXIONS ATTEMPTS
-AXES_FAILURE_LIMIT = int(os.getenv("AXES_FAILURE_LIMIT", 3))
-# Lock out by combination of ip AND User if not otherwise defined in .env
-AXES_LOCKOUT_PARAMETERS = (
-    os.getenv("AXES_LOCKOUT_PARAMETERS").split(",")
-    if os.getenv("AXES_LOCKOUT_PARAMETERS")
-    else ["ip_address", ["username", "user_agent"]]
-)
-
-AXES_LOCKOUT_URL = (
-    "/" + PREFIX_URL + "/account/lockout" if PREFIX_URL else "/account/lockout"
-)
-
-AXES_COOLOFF_TIME = int(os.getenv("AXES_COOLOFF_TIME", 2))
-AXES_SENSITIVE_PARAMETERS = ["auth-password"]
-AXES_IPWARE_PROXY_COUNT = int(os.getenv("AXES_IPWARE_PROXY_COUNT", 1))
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -128,7 +111,6 @@ INSTALLED_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
-    "axes",
 ]
 
 if ENABLE_2FA:
@@ -154,7 +136,6 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "axes.middleware.AxesMiddleware",
     "allauth.account.middleware.AccountMiddleware",
 ]
 
@@ -196,8 +177,6 @@ TEMPLATES = [
 ]
 
 AUTHENTICATION_BACKENDS = [
-    # AxesBackend
-    "axes.backends.AxesStandaloneBackend",
     # Needed to login by username in Django admin, regardless of `allauth`
     "django.contrib.auth.backends.ModelBackend",
     # `allauth` specific authentication methods, such as login by email
