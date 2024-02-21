@@ -16,7 +16,8 @@ services:
       # Mount code for live reload
       - .:/code
     depends_on:
-      - "postgres"
+      postgres:
+        condition: service_healthy
     ports:
       - "${DJANGO_DOCKER_PORT}:9000"
 
@@ -31,6 +32,11 @@ services:
       - "${POSTGRES_DOCKER_PORT}:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
   mailhog:
     container_name: mailhog
