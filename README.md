@@ -21,9 +21,7 @@ docker-compose run web scripts/migrate.sh
 
 As fixtures are not yet available, should you need and superadmin account, please create it as follow: ```python manage.py createsuperuser```
 
-If everything went fine, go to ```localhost:9051``` and you should see:
-
-![image](https://github.com/yverdon/kablo/assets/3356536/3276444f-55e8-4f03-b5c9-1665de45c36b)
+If everything went fine, go to ```localhost:9051``` and you should see the welcome page:
 
 
 ## Setting up production instance
@@ -120,8 +118,8 @@ And the `requirements_dev.in` and the `requirements_dev.txt` files.
 To upgrade all the packages to their latest available version, run:
 
 ```
-docker-compose exec kablo pip-compile -U requirements.in
-docker-compose exec kablo pip install -r requirements.txt
+docker compose exec kablo pip-compile -U requirements.in
+docker compose exec kablo pip install -r requirements.txt
 ```
 
 To upgrade only a specific package, use `pip-compile -P <packagename>`.
@@ -129,8 +127,15 @@ The following commands will upgrade Django to its latest version, making sure
 it's compatible with other packages listed in the `requirements.in` file:
 
 ```
-docker-compose exec web pip-compile -P django requirements.in
-docker-compose exec web pip install -r requirements.txt
+docker compose exec web pip-compile -P django requirements.in
+docker compose exec web pip install -r requirements.txt
+```
+
+## Documenting models
+
+In order to generate the model documentation, run
+```
+docker compose run kablo scripts/generate_models_diagram.sh
 ```
 
 ### Two factor authentication [NOT IMPLEMENTED]
