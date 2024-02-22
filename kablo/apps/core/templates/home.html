@@ -1,15 +1,28 @@
 {% load i18n %}
+{% load static %}
 
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
         <style>
             html {
                 background-color: black;
-                font-family: arial;
+                font-family: "Comfortaa", sans-seri;
                 color: white;
                 border: 0;
                 text-align: center;
+            }
+
+            #title {
+                font-size: 100px;
+                font-weight: bold;;
+            } 
+
+            #logo {
+                width: 300px;
             }
 
         </style>
@@ -18,9 +31,9 @@
 <body>
 
 
-<h1>{% translate 'Welcome to the kablo project!' %}</h1>
-<p>{% translate 'Looks your development server is up and running, congrats!' %}</p>
-<h2>{% translate 'All is about networks' %}</h2>
+<p id="title">KABLO</p>
+<img id="logo" width=300 src="{% static 'images/electricity.svg'%}" class="img-fluid" type="image/svg">
+
 
 </body>
 </html> 
