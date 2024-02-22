@@ -17,6 +17,8 @@ RUN apt-get update && \
     gettext \
     shared-mime-info \
     tzdata \
+    graphviz \
+    graphviz-dev \
     && ln -fs /usr/share/zoneinfo/Europe/Zurich /etc/localtime \
     && dpkg-reconfigure -f noninteractive tzdata
 
