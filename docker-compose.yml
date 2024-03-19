@@ -11,7 +11,6 @@ services:
     entrypoint: /code/entrypoint.sh
     command: "gunicorn kablo.core.wsgi -b :9000 --error-logfile gunicorn_log.log --workers=2 --threads=4 --worker-class=gthread"
     environment:
-      ENV: PROD
       DISABLE_MIGRATION_SCRIPT_ON_PRODUCTION:
       CLEAR_PUBLIC_SCHEMA_ON_FIXTURIZE:
       STATIC_URL:

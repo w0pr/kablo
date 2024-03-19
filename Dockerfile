@@ -22,12 +22,12 @@ ENV PYTHONUNBUFFERED 1
 
 FROM base as production
 
-ENV ENV=prod
+ENV ENV=PROD
 RUN pip install -r requirements.txt
 
 
 FROM base as dev
 
-ENV ENV=dev
+ENV ENV=DEV
 ENV PYTHONDONTWRITEBYTECODE 1
 RUN pip install -r requirements_dev.txt
